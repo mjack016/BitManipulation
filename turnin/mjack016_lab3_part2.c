@@ -21,7 +21,8 @@ int main(void) {
         unsigned char tmpA;
         unsigned char tmpC;
     while (1) {
-	tmpA = PINA;
+	tmpA = PINA; //0x83 -> 1000 0011 ->
+	tmpA = tmpA & 0x0F;
 	tmpC = 0x00;
         if (tmpA == 0x01 || tmpA == 0x02){
 		tmpC = 0x20; //0010 0000
