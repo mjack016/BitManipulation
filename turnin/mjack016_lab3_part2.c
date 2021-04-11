@@ -39,7 +39,7 @@ int main(void) {
 		tmpC = 0x3E;
 	}
 	else if (tmpA == 0x0D || tmpA == 0x0E || tmpA == 0x0F){
-		tmpC == 0x3F;
+		tmpC = 0x3F;
 	}
         PORTC = tmpC;
     }
