@@ -24,7 +24,7 @@ int main(void) {
 	tmpA = PINA;
 	tmpC = 0x00;
         if (tmpA == 0x01 || tmpA == 0x02){
-		tmpC = 0x20; //0010
+		tmpC = 0x20; //0010 0000
 	}
 	else if (tmpA == 0x03 || tmpA == 0x04){
 		tmpC = 0x30; // 0111
