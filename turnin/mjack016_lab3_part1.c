@@ -17,7 +17,7 @@ int main(void){
           DDRB = 0x00; PORTB = 0xFF;
           DDRC = 0xFF; PORTC = 0x00;
  /* Insert your solution below */
-        unsigned char cnt = 0x00;
+        unsigned char cnt;
         unsigned char curr1 = 0x00;
         unsigned char curr2 = 0x00;
         unsigned char i = 0;
@@ -26,6 +26,7 @@ int main(void){
     while (1) {
         tmpA = PINA;
         tmpB = PINB;
+	cnt = 0;
         for(i = 0; i < 8; i++){
                curr1 = ((tmpA >> i) & 0x01);
                 if(curr1 == 1){
