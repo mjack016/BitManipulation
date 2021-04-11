@@ -11,9 +11,8 @@
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
 #endif
-
-int main(void) {
-    /* Insert DDR and PORT initializations */
+int main(void){
+ /* Insert DDR and PORT initializations */
           DDRA = 0x00; PORTA = 0xFF;
           DDRB = 0x00; PORTB = 0xFF;
           DDRC = 0xFF; PORTC = 0x00;
@@ -25,22 +24,21 @@ int main(void) {
         unsigned char tmpA = 0x00;
         unsigned char tmpB = 0x00;
     while (1) {
-	tmpA = PINA;
-	tmpB = PINB;
+        tmpA = PINA;
+        tmpB = PINB;
         for(i = 0; i < 8; i++){
                curr1 = ((tmpA >> i) & 0x01);
-		if(curr1 == 1){
-			cnt = cnt + 1;
-		}
- 		
+                if(curr1 == 1){
+                        cnt = cnt + 1;
+                }
+
                curr2 = ((tmpB >> i) & 0x01);
-		if(curr2 == 1){
-			cnt = cnt + 1;
-		}
-	
+                if(curr2 == 1){
+                        cnt = cnt + 1;
+                }
+
         }
         PORTC = cnt;
     }
     return 1;
-
 }
