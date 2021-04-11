@@ -18,7 +18,7 @@ int main(void) {
          // DDRB = 0x00; PORTB = 0xFF;
           DDRC = 0xFF; PORTC = 0x00;
  /* Insert your solution below */
-        unsigned char tmpA;
+        unsigned char tmpA; //0111 1111
         unsigned char tmpC;
     while (1) {
 	tmpA = PINA; //0x83 -> 1000 0011 ->
@@ -44,6 +44,10 @@ int main(void) {
 	}
 	if(tmpA <= 0x04){
 		tmpC = tmpC | 0x40;
+	}
+	tmpA = (PINA & 0X70); // 0011 0000
+	if(tmpA == 0x30){
+		tmpC = tmpC | 0x80;
 	}
         PORTC = tmpC;
     }
